@@ -1,5 +1,6 @@
 package main
 
+/*
 import (
 	"fmt"
 	"time"
@@ -34,3 +35,4 @@ func main() {
 		fmt.Printf("run cmd failed:%s\n", err.Error())
 	}
 }
+*/

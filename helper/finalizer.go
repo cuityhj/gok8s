@@ -15,11 +15,9 @@ func AddFinalizer(obj metav1.Object, finalizer string) {
 }
 
 func RemoveFinalizer(obj metav1.Object, finalizer string) {
-	old := obj.GetFinalizers()
-	new := slice.SliceRemove(old, finalizer)
-	if len(old) != len(new) {
-		obj.SetFinalizers(new)
-	}
+	finalizers := obj.GetFinalizers()
+	slice.SliceRemove(&finalizers, finalizer)
+	obj.SetFinalizers(finalizers)
 }
 
 func HasFinalizer(obj metav1.Object, finalizer string) bool {
